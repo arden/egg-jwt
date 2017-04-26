@@ -5,6 +5,6 @@
  * @member Config#jwt
  * @property {String} SOME_KEY - some description
  */
-exports.jwt = {
+exports.jwtAuth = {
   secret: '123456',
 };

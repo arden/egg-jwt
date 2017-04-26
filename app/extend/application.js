@@ -1,12 +1,12 @@
 'use strict';
 
-const koajwt = require('koa-jwt');
+const koajwt = require('../../lib/koa_jwt');
 const JWT = Symbol('Application#jwt');
 
 module.exports = {
-  get jwt() {
+  get jwtAuth() {
     if (!this[JWT]) {
-      this[JWT] = koajwt(this.config.jwt);
+      this[JWT] = koajwt(this.config.jwtAuth);
       this[JWT].sign = koajwt.sign;
       this[JWT].verify = koajwt.verify;
       this[JWT].decode = koajwt.decode;
